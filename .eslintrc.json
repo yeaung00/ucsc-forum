@@ -1,0 +1,6 @@
+{
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "newline-per-chained-call": "error"
+  }
+}
