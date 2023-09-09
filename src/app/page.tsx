@@ -1,5 +1,5 @@
 import { getServerSession } from "next-auth";
-import { authOptions } from "./api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/auth/authOptions";
 import Navbar from "@/components/Navbar";
 import { getUserByEmail, insertUser } from "@/lib/supabase/userActions";
 import { redirect } from 'next/navigation';
@@ -9,11 +9,6 @@ import CoursesContainer from "@/components/CoursesContainer";
  
 export default async function Home() {
   const session = await getServerSession(authOptions);
-
-  // if (!session) {
-  //   redirect('/api/auth/signin')
-  // }
-
   const user = await getUserByEmail(session?.user?.email)
 
   if (!user && session) {
