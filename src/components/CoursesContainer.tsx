@@ -17,7 +17,8 @@ export default function CoursesContainer({ user }: Props) {
       setUserCourses(userCoursesData)
     }
     initUserCourses()
-  })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
   return (
     <div className='flex h-96 w-full overflow-y-auto sm:w-[40em] flex-col sm:flex-row justify-center gap-5'>
       {userCourses?.map((userCourse) => (
